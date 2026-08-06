@@ -1,3 +1,5 @@
+import './App.css'
+
 const words = [{
   
   language: "일본어",
@@ -26,7 +28,7 @@ function App() {
       <h1>My Vocabulary</h1>
 
       {words.map((word) => (
-        <div>
+        <div className="word-card">
           <h2>{word.flag} {word.language}</h2>
 
           <h3>{word.word}</h3>
