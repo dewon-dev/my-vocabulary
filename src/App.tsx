@@ -1,4 +1,13 @@
 import './App.css'
+import WordCard from './WordCard'
+
+type Word = {
+  language: string
+  flag: string
+  word: string
+  reading?: string
+  meaning: string
+}
 
 const words = [{
   
@@ -27,15 +36,9 @@ function App() {
     <div>
       <h1>My Vocabulary</h1>
 
-      {words.map((word) => (
-        <div className="word-card">
-          <h2>{word.flag} {word.language}</h2>
-
-          <h3>{word.word}</h3>
-          <p>{word.reading}</p>
-          <p>{word.meaning}</p>
-        </div>
-      ))}
+      {words.map((word, index) => (
+  <WordCard key={index} word={word}  />
+))}
     </div>
   )
 }
